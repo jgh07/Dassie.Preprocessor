@@ -45,3 +45,6 @@ A *template file* contains 3 elements:
 - Named *sections*: ``#<Name> { ... }``
 
 **Sections** contain Dassie source code, but are not included in the output file. They are used to define functions (in the ``members`` section) and declare imports (in the ``head`` section). Inside of a section, closing braces need to be escaped using two braces: ``}}``.
+
+## Limitations
+Currently, the tool does not support any external references. I will add support for Dassie project files (``dsconfig.xml``) soon.

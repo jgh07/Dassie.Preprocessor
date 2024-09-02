@@ -24,7 +24,7 @@ public class PreprocessCommand : ICompilerCommand
         string outFile = Path.Combine(Path.GetDirectoryName(inFile), $"{Path.GetFileNameWithoutExtension(inFile)}.out{Path.GetExtension(inFile)}");
 
         if (args.Length > 1)
-            outFile = args[1];
+            outFile = Path.GetFullPath(args[1]);
 
         Preprocessor.Preprocess(inFile, outFile);
         return 0;

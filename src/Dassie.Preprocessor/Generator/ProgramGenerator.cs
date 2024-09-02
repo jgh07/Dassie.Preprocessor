@@ -1,5 +1,5 @@
 ﻿using Dassie.Preprocessor.Syntax;
-using System;
+using System.IO;
 using System.Linq;
 using System.Text;
 
@@ -21,7 +21,7 @@ internal static class ProgramGenerator
                 memberSectionBuilder.AppendLine(sec.Content);
 
             else
-                EmitError($"Invalid section '{sec.Name}'.", sec.Start, inPath);
+                EmitError($"Invalid section '{sec.Name}'.", sec.Start, Path.GetFileName(inPath));
         }
 
         int exprCount = 0;
